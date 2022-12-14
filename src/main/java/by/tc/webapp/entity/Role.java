@@ -3,9 +3,9 @@ package by.tc.webapp.entity;
 import by.tc.webapp.entity.interfaces.Identifiable;
 
 public class Role implements Identifiable {
-    private byte idRole;
+    private int idRole;
     private String roleName;
-    public Role(byte idRole, String roleName) {
+    public Role(int idRole, String roleName) {
         this.idRole = idRole;
         this.roleName = roleName;
     }

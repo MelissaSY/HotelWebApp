@@ -11,32 +11,29 @@ public final class Commands {
     };
     private static HashMap<String, Commands.Command> stringCommandTranslator  = new HashMap<>()
     { {
-        put("login", Command.LOG_IN);
-        put("logout", Command.LOG_OUT);
-        put("reserve", Command.RESERVE);
-        put("register", Command.REGISTER);
-        put("delete_booking", Command.DELETE_BOOKING);
-        put("add_room", Command.ADD_ROOM);
-        put("get_all", Command.GET_ALL_ROOMS);
-        put("get_reserved", Command.GET_RESERVED_ROOMS);
+        put("LOG_IN", Command.LOG_IN);
+        put("LOG_OUT", Command.LOG_OUT);
+        put("RESERVE", Command.RESERVE);
+        put("REGISTER", Command.REGISTER);
+        put("DELETE_BOOKING", Command.DELETE_BOOKING);
+        put("ADD_ROOM", Command.ADD_ROOM);
+        put("GET_ALL_ROOMS", Command.GET_ALL_ROOMS);
+        put("GET_RESERVED_ROOMS", Command.GET_RESERVED_ROOMS);
     } };
 
     private static HashMap<Commands.Command, String> commandStringTranslator = new HashMap<>()
     { {
-        put(Command.LOG_IN, "login");
-        put(Command.LOG_OUT, "logout");
-        put(Command.RESERVE, "reserve");
-        put(Command.REGISTER, "register");
-        put(Command.DELETE_BOOKING, "delete_booking");
-        put(Command.ADD_ROOM, "add_room");
-        put(Command.GET_ALL_ROOMS, "get_all");
-        put(Command.GET_RESERVED_ROOMS, "get_reserved");
+        put(Command.LOG_IN, "LOG_IN");
+        put(Command.LOG_OUT, "LOG_OUT");
+        put(Command.RESERVE, "RESERVE");
+        put(Command.REGISTER, "REGISTER");
+        put(Command.DELETE_BOOKING, "DELETE_BOOKING");
+        put(Command.ADD_ROOM, "ADD_ROOM");
+        put(Command.GET_ALL_ROOMS, "GET_ALL_ROOMS");
+        put(Command.GET_RESERVED_ROOMS, "GET_RESERVED_ROOMS");
     } };
 
     public static Commands.Command getCommand(String commandString) {
-        if(stringCommandTranslator.containsKey(commandString.toLowerCase()))
-            return stringCommandTranslator.get(commandString);
-        else
-            return null;
+        return stringCommandTranslator.getOrDefault(commandString, null);
     }
 }
